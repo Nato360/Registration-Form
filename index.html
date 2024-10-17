@@ -28,9 +28,8 @@
                         <div class="card">
                             <div class="card-body p-5">
 
-                              <h3 class="title">Login</h3>
-
-                              <form id="login-form">
+                              <form action="/action_page.php" id="login-form">
+                                   <h3 class="title">Login</h3>
 
                                   <div class="form-floating mb-3">
                                     <input type="email" class="form-control form" id="floatingInput" placeholder="name@example.com">
@@ -50,7 +49,7 @@
                                   </div>
                   
                                   <div class="d-flex justify-content-center">
-                                    <button  type="button" class="btn">Submit</button>
+                                    <button  type="button" class="btn" onclick="openForm()">Submit</button>
                                   </div>
                   
                                   <p class="text-center text-muted mt-5 mb-0">Dont have an account? <a href="#!"
@@ -60,10 +59,8 @@
                             </form>
 
 
-
-                                <h3 class="title">Registration Form</h3>
-
                                 <form id="signup-form"  onsubmit="return regComp()">
+                                  <h3 class="title">Registration Form</h3>
 
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control form" id="floatingInput" placeholder="John doe">
