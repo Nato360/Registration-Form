@@ -31,12 +31,11 @@
     <section class="vh-100 bg-image">
       <div class="mask d-flex align-items-center h-100 gradient-custom-3">
         <div class="container h-100">
-          <div
-            class="row d-flex justify-content-center align-items-center h-100"
-          >
+          <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
               <div class="card">
                 <div class="card-body p-5">
+
                   <form action="" id="login-form">
                     <h3 class="title">Login</h3>
 
@@ -62,6 +61,29 @@
                       <label for="floatingPassword">Password</label>
                     </div>
 
+                    <!-- <div class="input-group justify-content-center mb-3">
+                      <input
+                        class="form-check-input me-3"
+                        type="checkbox"
+                        value=""
+                        id="myInput"
+                      />
+                      <label class="form-check-label" for="myInput">
+                       Show Password
+                      </label>
+                    </div> -->
+
+                    <span>
+                      <input
+                        type="checkbox"
+                        name="view-pswd"
+                        id="view-pswd"
+                        onclick="isChecked()"
+                      />
+                      <label for="view-pswd"> View Password</label>
+                    </span>
+            
+
                     <div class="input-group justify-content-center mb-3">
                       <input
                         class="form-check-input me-2"
@@ -69,7 +91,7 @@
                         value=""
                         id="form2Example3cg"
                       />
-                      <label class="form-check-label" for="form2Example3g">
+                      <label class="form-check-label" for="form2Example3cg">
                         I agree to the
                         <a href="#!" class="text-body"
                           ><u>Terms of service</u></a
@@ -92,7 +114,7 @@
                   </form>
 
                   <form id="signup-form" onsubmit="return regComp()">
-                    <h3 class="title">Registration Form</h3>
+                    <h3 class="title">Sign Up</h3>
 
                     <div class="form-floating mb-3">
                       <input
@@ -124,7 +146,7 @@
                         id="floatingInput"
                         placeholder="+1-58-58586"
                       />
-                      <label for="floatingPassword">Phone Number</label>
+                      <label for="floatingInput">Phone Number</label>
                     </div>
 
                     <div class="form-floating mb-3">
@@ -135,7 +157,7 @@
                         id="floatingPassword2"
                         placeholder="123$#ab"
                       />
-                      <label for="floatingPassword">Password</label>
+                      <label for="floatingPassword2">Password</label>
                     </div>
 
                     <div class="form-floating">
@@ -143,13 +165,36 @@
                         type="password"
                         class="form-control form"
                         aria-required="true"
-                        id="floatingPassword-confirm"
+                        id="floatingPassword3"
                         placeholder="123$#ab"
                       />
-                      <label for="floatingPassword">Confirm Password</label>
+                      <label for="floatingPassword3">Confirm Password</label>
                     </div>
 
                     <div class="input-group justify-content-center mb-3">
+                      <input
+                        class="form-check-input me-3"
+                        type="checkbox"
+                        value=""
+                        id="myInput"
+                      />
+                      <label class="form-check-label" for="myInput">
+                       Show Password
+                      </label>
+                    </div>
+
+                    <!-- <span>
+                      <input
+                        type="checkbox"
+                        name="view-pswd"
+                        id="view-pswd"
+                        onclick="isChecked()"
+                      />
+                      <label for="view-pswd"> View Password</label>
+                    </span> -->
+            
+
+                    <div class="input-group justify-content-center mb-3 term">
                       <input
                         class="form-check-input me-2"
                         type="checkbox"
@@ -190,7 +235,7 @@
     <script>
       let pswd = document.getElementById("floatingPassword");
       let pswd2 = document.getElementById("floatingPassword2");
-      let pswd3 = document.getElementById("floatingPassword-confirm");
+      let pswd3 = document.getElementById("floatingPassword3");
       // const viewPswd = document.getElementById("view-pswd");
       // const viewPswd2 = document.getElementById("view-pswd2");
       const logInForm = document.getElementById("login-form");
