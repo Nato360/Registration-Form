@@ -28,17 +28,17 @@
                         <div class="card">
                             <div class="card-body p-5">
 
-                              <form action="/action_page.php" id="login-form">
+                              <form action="" id="login-form">
                                    <h3 class="title">Login</h3>
 
                                   <div class="form-floating mb-3">
-                                    <input type="email" class="form-control form" id="floatingInput" placeholder="name@example.com">
+                                    <input type="email" class="form-control form" aria-required="true" id="floatingInput" placeholder="name@example.com">
                                     <label for="floatingInput">Email address</label>
                                   </div>
                   
                                   <div class="form-floating mb-3">
-                                    <input type="password" class="form-control form" id="floatingInput" placeholder="123$#ab" >
-                                    <label for="floatingInput">Password</label>
+                                    <input type="password" class="form-control form" aria-required="true" id="floatingPassword" placeholder="123$#ab" >
+                                    <label for="floatingPassword">Password</label>
                                   </div>
                 
                                   <div class="input-group justify-content-center mb-3">
@@ -52,7 +52,7 @@
                                     <button  type="button" class="btn" onclick="openForm()">Submit</button>
                                   </div>
                   
-                                  <p class="text-center text-muted mt-5 mb-0">Dont have an account? <a href="#!"
+                                  <p class="text-center text-muted mt-5 mb-0">Dont have an account? <a href="#"
                                       class="fw-bold text-body" onclick="register()"><u>Register</u></a></p>
                   
                 
@@ -63,28 +63,28 @@
                                   <h3 class="title">Registration Form</h3>
 
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control form" id="floatingInput" placeholder="John doe">
+                                        <input type="text" class="form-control form" aria-required="true" id="floatingInput" placeholder="John doe">
                                         <label for="floatingInput">Your Name</label>
                                     </div>
 
                                       <div class="form-floating mb-3">
-                                        <input type="email" class="form-control form" id="floatingInput" placeholder="name@example.com">
+                                        <input type="email" class="form-control form" aria-required="true" id="floatingInput" placeholder="name@example.com">
                                         <label for="floatingInput">Email address</label>
                                       </div>
 
                                       <div class="form-floating mb-3">
-                                        <input type="tel" class="form-control form" id="floatingPassword" placeholder="+1-58-58586">
+                                        <input type="tel" class="form-control form" aria-required="true" id="floatingInput" placeholder="+1-58-58586">
                                         <label for="floatingPassword">Phone Number</label>
                                       </div>
                       
                                       <div class="form-floating mb-3">
-                                        <input type="password" class="form-control form" id="floatingInput" placeholder="123$#ab" >
-                                        <label for="floatingInput">Password</label>
+                                        <input type="password" class="form-control form" aria-required="true" id="floatingPassword2" placeholder="123$#ab" >
+                                        <label for="floatingPassword">Password</label>
                                       </div>
                     
                                       <div class="form-floating">
-                                        <input type="password" class="form-control form" id="floatingInput" placeholder="123$#ab">
-                                        <label for="floatingInput">Confirm Password</label>
+                                        <input type="password" class="form-control form" aria-required="true" id="floatingPassword-confirm" placeholder="123$#ab">
+                                        <label for="floatingPassword">Confirm Password</label>
                                       </div>
                     
                                       <div class="input-group justify-content-center mb-3">
@@ -95,10 +95,10 @@
                                       </div>
                       
                                       <div class="d-flex justify-content-center" onclick="myFunction()" value="Submit form">
-                                        <button  type="button" class="btn">Submit</button>
+                                        <button  type="submit" class="btn">Submit</button>
                                       </div>
                       
-                                      <p class="text-center text-muted mt-5 mb-0">Already registered? <a href="#!"
+                                      <p class="text-center text-muted mt-5 mb-0">Already registered? <a href="#"
                                           class="fw-bold text-body"  onclick="logIn()" ><u>Login</u></a></p>
                       
                     
@@ -114,6 +114,11 @@
 
 
     <script>
+       let pswd = document.getElementById("floatingPassword");
+      let pswd2 = document.getElementById("floatingPassword2");
+      let pswd3 = document.getElementById("floatingPassword-confirm");
+      // const viewPswd = document.getElementById("view-pswd");
+      // const viewPswd2 = document.getElementById("view-pswd2");
       const logInForm = document.getElementById("login-form");
       const signUpForm = document.getElementById("signup-form");
 
@@ -124,6 +129,34 @@
       function logIn() {
         logInForm.style.display = "flex";
         signUpForm.style.display = "none";
+      }
+
+      function regComp() {
+        if (
+          pswd2.value !== pswd3.value &&
+          document.getElementById("age").value >= 18
+        ) {
+          errorMsg.innerHTML = "Password mismatch";
+          errorMsg.style.display = "block";
+          return false;
+        } else if (
+          pswd2.value == pswd3.value &&
+          document.getElementById("age").value < 18
+        ) {
+          errorMsg.innerHTML = "Age must be more than 18";
+          errorMsg.style.display = "block";
+          return false;
+        } else if (
+          pswd2.value !== pswd3.value &&
+          document.getElementById("age").value < 18
+        ) {
+          errorMsg.innerHTML = "Password mismatch and Age must be more than 18";
+          errorMsg.style.display = "block";
+          return false;
+        } else {
+          errorMsg.style.display = "none";
+          return true;
+        }
       }
       </script>
 
