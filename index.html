@@ -26,6 +26,7 @@
 
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="styles.css" />
+    
   </head>
   <body>
     <section class="vh-100 bg-image">
@@ -61,19 +62,20 @@
                       <label for="floatingPassword">Password</label>
                     </div>
 
-                    <!-- <div class="input-group justify-content-center mb-3">
+                    <div class="input-group justify-content-center mb-3">
                       <input
                         class="form-check-input me-3"
                         type="checkbox"
                         value=""
                         id="myInput"
+                        onclick="isChecked()"
                       />
                       <label class="form-check-label" for="myInput">
                        Show Password
                       </label>
-                    </div> -->
+                    </div>
 
-                    <span>
+                    <!-- <span>
                       <input
                         type="checkbox"
                         name="view-pswd"
@@ -81,7 +83,7 @@
                         onclick="isChecked()"
                       />
                       <label for="view-pswd"> View Password</label>
-                    </span>
+                    </span> -->
             
 
                     <div class="input-group justify-content-center mb-3">
@@ -177,6 +179,7 @@
                         type="checkbox"
                         value=""
                         id="myInput"
+                        onclick="isChecked()"
                       />
                       <label class="form-check-label" for="myInput">
                        Show Password
@@ -194,7 +197,7 @@
                     </span> -->
             
 
-                    <div class="input-group justify-content-center mb-3 term">
+                    <!-- <div class="input-group justify-content-center mb-3 term">
                       <input
                         class="form-check-input me-2"
                         type="checkbox"
@@ -207,7 +210,7 @@
                           ><u>Terms of service</u></a
                         >
                       </label>
-                    </div>
+                    </div> -->
 
                     <div
                       class="d-flex justify-content-center"
@@ -250,6 +253,18 @@
         logInForm.style.display = "flex";
         logInForm.style.flexDirection = "column";
         signUpForm.style.display = "none";
+      }
+
+      function isChecked() {
+        if (viewPswd.checked || viewPswd2.checked) {
+          pswd.type = "text";
+          pswd2.type = "text";
+          pswd3.type = "text";
+        } else {
+          floatingpassword.type = "password";
+          floatingpassword2.type = "password";
+          floatingpassword3.type = "password";
+        }
       }
 
       function regComp() {
